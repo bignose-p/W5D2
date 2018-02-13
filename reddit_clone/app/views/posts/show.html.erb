@@ -1,0 +1,17 @@
+<%= @post.title %>
+<%= @post.url %>
+<%= @post.content %>
+<%= @post.user.username %>
+
+<% @comments = @post.comments %>
+
+<% @comments.each do |comment| %>
+  <% if comment.parent_comment_id.nil? %>
+      <p><%= comment.content %></p>
+      <a href="<%= comment_url(comment) %>">Reply</a> 
+    <%= render 'comments/comment', comments: @comments, parent: comment %>
+  <% end %>
+<% end %>
+
+<br>
+<%= link_to "Comment", new_post_comment_url(@post), method: :get %>

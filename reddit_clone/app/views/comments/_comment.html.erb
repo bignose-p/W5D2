@@ -1,0 +1,12 @@
+<ul>
+  <li>
+    <% comments.each do |comment| %>
+      <% if comment.parent_comment_id == parent.id %>
+        <p><%= comment.content %></p>
+        <a href="<%= comment_url(comment) %>">Reply</a>
+          <%= render 'comments/comment', comments: comments, parent: comment %>
+        <% end %>
+    <% end %>
+  </li>
+</ul>
+

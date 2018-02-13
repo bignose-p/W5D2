@@ -1,0 +1,23 @@
+/* PHASE 2: Notifications */
+.badge {
+  background-color: black;
+  border-radius: 1000px;
+  padding: 1px 6px;
+}
+
+#notifications:hover span {
+  background-color: #f00;
+}
+
+.dropdown {
+  position: absolute;
+  display: none;
+}
+
+#notifications:hover .dropdown {
+  display: block;
+}
+
+#notifications {
+  position: relative;
+}
